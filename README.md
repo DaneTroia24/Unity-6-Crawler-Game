@@ -1,10 +1,8 @@
 # Interaction & Loot
 The first-person interaction and loot system from a Unity dungeon crawler. One raycast from the camera drives everything the player can look at, highlight, pick up, unlock, and open.
 
-An excerpt from a larger project — these nine files show one system end to end, but won't compile on their own.
-
 How it fits together
-InteractionSystem casts a single ray each frame and resolves what's under the crosshair. Loose items get picked up directly. Anything with real behaviour goes through Interactable, an abstract base that handles prompts, highlighting, and locking — so adding a chest, door, or lever means overriding three methods and touching nothing else.
+InteractionSystem casts a single ray each frame and resolves what's under the crosshair. Loose items get picked up directly. Anything with real behaviour goes through Interactable, an abstract base that handles prompts, highlighting, and locking, so adding a chest, door, or lever means overriding three methods and touching nothing else.
 
 Loot is data-driven: designers build LootTable assets, and LootDropper rolls them into actual drops at runtime.
 
